@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home — Sandesh Pal</title>
+  <meta name="description" content="Personal blog and portfolio of Sandesh Pal, a first-year B.Tech CSE student building for the web.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Sandesh Pal, home">
+      <span class="avatar" aria-hidden="true">S</span>
+      <span>SandeshPro<span class="slash">/</span></span>
+    </a>
+    <nav aria-label="Main navigation">
+      <ul class="nav-list">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      
+      <button id="theme-toggle"
+      class="theme-btn"
+      type="button"
+      aria-label="Switch to dark mode"
+      aria-pressed="false">
+      
+      🌙
+      
+    </button>
+    <a class="btn-outline" href="mailto:sandeshpal938@gmail.com">Let’s talk ↗</a>
+
+
+</div>
+  </header>
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-text">
+        <p class="eyebrow">B.Tech student · Building for the web</p>
+        <h1 id="hero-title">Curious mind. <em>Careful craft.</em></h1>
+        <p class="lead">Hi, I’m Sandesh — a first-year web development student turning little ideas into useful, thoughtful things on the internet.</p>
+        <div class="actions">
+          <a class="btn-dark" href="blog.html">Explore my work ↓</a>
+          <a class="btn-link" href="about.html">A little about me →</a>
+        </div>
+        <p class="learning"><span class="line" aria-hidden="true"></span> Currently learning <strong>HTML, CSS &amp; JavaScript</strong></p>
+      </div>
+
+      <!-- <figure> wraps a self-contained piece of content (here, an image).
+           <figcaption> is its caption. Together they tell the browser the
+           caption belongs to the image. -->
+      <figure class="hero-art">
+        <img src="hero-desk.svg" alt="Illustration of a monitor on a wooden desk beside a potted plant" width="520" height="400">
+        <figcaption>Somewhere between a sketch and a working prototype.</figcaption>
+        <span class="badge" aria-hidden="true">Make<br>good<br>things</span>
+      </figure>
+    </section>
+
+    <section class="blog" aria-labelledby="latest-title">
+      <h2 id="latest-title">Latest from the blog</h2>
+      <div class="posts">
+        <article>
+          <figure>
+            <img src="slashtag.svg" alt="Angle brackets and a slash, the symbol of HTML tags" width="400" height="240" loading="lazy">
+            <figcaption>Tags that describe meaning, not just looks.</figcaption>
+          </figure>
+          <time datetime="2026-10-29">29 Oct 2026</time>
+          <h3><a href="blog.html#semantic">Why semantic HTML matters</a></h3>
+          <p>Tags like <code>header</code>, <code>main</code> and <code>article</code> tell browsers and screen readers what each part of a page is for.</p>
+        </article>
+        <article>
+          <figure>
+            <img src="linkchain.svg" alt="Two connected chain links" width="400" height="240" loading="lazy">
+            <figcaption>One page connected to the next.</figcaption>
+          </figure>
+          <time datetime="2026-10-30">30 Oct 2026</time>
+          <h3><a href="blog.html#links">Links that go somewhere useful</a></h3>
+          <p>Relative links, absolute links and anchors: how I connected three pages into one site.</p>
+        </article>
+        <article>
+          <figure>
+            <img src="bulleted.svg" alt="A bulleted list with three items" width="400" height="240" loading="lazy">
+            <figcaption>Three bullets, three ideas.</figcaption>
+          </figure>
+          <time datetime="2026-10-31">31 Oct 2026</time>
+          <h3><a href="blog.html#lists">Lists I actually use</a></h3>
+          <p>Ordered, unordered and nested lists, and why a navigation menu is really just a list.</p>
+        </article>
+      </div>
+      <p class="more"><a class="btn-link" href="blog.html">Read all posts →</a></p>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <p>© 2026 Sandesh Pal. Built with HTML &amp; CSS.</p>
+    <ul class="foot-links">
+      <li><a href="https://github.com/Sandesh-Pro07" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://leetcode.com/u/SANDESH_m007/" target="_blank" rel="noopener">LeetCode</a></li>
+      <li><a href="https://www.linkedin.com/in/sandesh-pal-069222386/" target="_blank" rel="noopener">LinkedIn</a></li>
+    </ul>
+  </footer>
+  <script>
+
+const themeButton = document.getElementById("theme-toggle");
+
+// Get saved theme
+const savedTheme = localStorage.getItem("theme");
+
+// Apply saved theme
+if (savedTheme) {
+    document.documentElement.setAttribute("data-theme", savedTheme);
+} else {
+    document.documentElement.setAttribute("data-theme", "light");
+}
+
+// Update button icon
+function updateButton() {
+
+    const currentTheme =
+        document.documentElement.getAttribute("data-theme");
+
+    if (currentTheme === "dark") {
+        themeButton.innerHTML = "☀️";
+        themeButton.setAttribute("aria-label", "Switch to light mode");
+        themeButton.setAttribute("aria-pressed", "true");
+    } else {
+        themeButton.innerHTML = "🌙";
+        themeButton.setAttribute("aria-label", "Switch to dark mode");
+        themeButton.setAttribute("aria-pressed", "false");
+    }
+}
+
+// Change theme on click
+themeButton.addEventListener("click", function () {
+
+    const currentTheme =
+        document.documentElement.getAttribute("data-theme");
+
+    const newTheme =
+        currentTheme === "dark" ? "light" : "dark";
+
+    document.documentElement.setAttribute("data-theme", newTheme);
+
+    // Save theme
+    localStorage.setItem("theme", newTheme);
+
+    updateButton();
+
+});
+
+// Initial button state
+updateButton();
+
+</script>
+</body>
+</html>

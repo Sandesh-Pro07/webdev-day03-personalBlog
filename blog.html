@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog — Sandesh Pal</title>
+  <meta name="description" content="Personal blog and portfolio of Sandesh Pal, a first-year B.Tech CSE student building for the web.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Sandesh Pal, home">
+      <span class="avatar" aria-hidden="true">S</span>
+      <span>sandeshpal<span class="slash">/</span></span>
+    </a>
+    <nav aria-label="Main navigation">
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html" aria-current="page">Blog</a></li>
+      </ul>
+    </nav>
+    <a class="btn-outline" href="mailto:your-email@example.com">Let’s talk ↗</a>
+  </header>
+  <main id="main">
+    <section class="page-head" aria-labelledby="blog-title">
+      <p class="eyebrow">Blog</p>
+      <h1 id="blog-title" class="page-title">Notes from <em>day three.</em></h1>
+    </section>
+
+    <section class="blog" aria-label="All posts">
+      <nav aria-label="Posts on this page" class="toc">
+        <ul>
+          <li><a href="#semantic">Semantic HTML</a></li>
+          <li><a href="#links">Links</a></li>
+          <li><a href="#lists">Lists</a></li>
+        </ul>
+      </nav>
+      <div class="posts">
+        <article>
+          <figure>
+            <img src="slashtag.svg" alt="Angle brackets and a slash, the symbol of HTML tags" width="400" height="240" loading="lazy">
+            <figcaption>Tags that describe meaning, not just looks.</figcaption>
+          </figure>
+          <time datetime="2026-10-29">29 Oct 2026</time>
+          <h3><a href="blog.html#semantic">Why semantic HTML matters</a></h3>
+          <p>Tags like <code>header</code>, <code>main</code> and <code>article</code> tell browsers and screen readers what each part of a page is for.</p>
+        </article>
+        <article>
+          <figure>
+            <img src="linkchain.svg" alt="Two connected chain links" width="400" height="240" loading="lazy">
+            <figcaption>One page connected to the next.</figcaption>
+          </figure>
+          <time datetime="2026-10-30">30 Oct 2026</time>
+          <h3><a href="blog.html#links">Links that go somewhere useful</a></h3>
+          <p>Relative links, absolute links and anchors: how I connected three pages into one site.</p>
+        </article>
+        <article>
+          <figure>
+            <img src="bulleted.svg" alt="A bulleted list with three items" width="400" height="240" loading="lazy">
+            <figcaption>Three bullets, three ideas.</figcaption>
+          </figure>
+          <time datetime="2026-10-31">31 Oct 2026</time>
+          <h3><a href="blog.html#lists">Lists I actually use</a></h3>
+          <p>Ordered, unordered and nested lists, and why a navigation menu is really just a list.</p>
+        </article>
+      </div>
+
+      <div class="long-posts">
+        <article id="semantic" class="long">
+          <h2>Why semantic HTML matters</h2>
+          <p>A <code>div</code> says nothing about its content. A <code>nav</code> says “this is navigation”. Search engines and screen readers use that meaning. The tags I used here:</p>
+          <ul>
+            <li><code>header</code> and <code>footer</code> for the top and bottom of the page</li>
+            <li><code>main</code> for the content unique to each page</li>
+            <li><code>section</code> and <code>article</code> to group related content</li>
+            <li><code>figure</code> and <code>figcaption</code> for images with captions</li>
+          </ul>
+        </article>
+        <article id="links" class="long">
+          <h2>Links that go somewhere useful</h2>
+          <p>I used three kinds of link:</p>
+          <ol>
+            <li>Relative links such as <code>about.html</code> to move between my own pages</li>
+            <li>Absolute links such as <code>https://github.com/…</code> with <code>target="_blank"</code> for other sites</li>
+            <li>Anchor links such as <code>#lists</code> to jump to a spot on the same page</li>
+          </ol>
+        </article>
+        <article id="lists" class="long">
+          <h2>Lists I actually use</h2>
+          <p>Use an ordered list when sequence matters and an unordered list when it doesn’t. Lists can also be nested:</p>
+          <ul>
+            <li>Front end
+              <ul><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+            </li>
+            <li>Programming
+              <ul><li>Java</li></ul>
+            </li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <p>© 2026 Sandesh Pal. Built with HTML &amp; CSS.</p>
+    <ul class="foot-links">
+      <li><a href="https://github.com/Sandesh-Pro07" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://leetcode.com/u/SANDESH_m007/" target="_blank" rel="noopener">LeetCode</a></li>
+      <li><a href="https://www.linkedin.com/in/sandesh-pal-069222386/" target="_blank" rel="noopener">LinkedIn</a></li>
+    </ul>
+  </footer>
+</body>
+</html>
